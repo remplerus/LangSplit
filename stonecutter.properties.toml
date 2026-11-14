@@ -7,6 +7,10 @@ mod.version = "3.0.0"
 deps.fabric_loader = "0.20.1"
 loomx.loom_version = "1.19-SNAPSHOT"
 
+# Leave empty to skip that platform when running `publishMods`
+publish.modrinth = ""
+publish.curseforge = ""
+
 
 ["1.21.1"]
 mod.mc_releases = ["1.21", "1.21.1"]
