@@ -1,0 +1,32 @@
+modLoader = "javafml"
+loaderVersion = "[1,)"
+license = "GPL-3.0-or-later"
+issueTrackerURL = "https://github.com/fabbe50/LangSplit/issues"
+
+[[mods]]
+modId = "${id}"
+version = "${version}"
+displayName = "${name}"
+displayURL = "https://fabbe50.com/modlink/langsplit/"
+authors = "fabbe50"
+description = '''
+To put this simply, I made this mod for my siblings to be able to learn English while playing Minecraft.
+It makes it possible to display 2 languages at the same time in the game.
+'''
+
+[[mixins]]
+config = "langsplit.mixins.json"
+
+[[dependencies.${id}]]
+modId = "minecraft"
+type = "required"
+versionRange = "${minecraft}"
+ordering = "NONE"
+side = "CLIENT"
+
+[[dependencies.${id}]]
+modId = "cloth_config"
+type = "required"
+versionRange = "[${cloth},)"
+ordering = "AFTER"
+side = "CLIENT"

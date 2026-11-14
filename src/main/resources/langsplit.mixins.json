@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "com.fabbe50.langsplit.mixin",
+  "compatibilityLevel": "${java}",
+  "minVersion": "0.8",
+  "client": [
+    "MixinScrollingText",
+    "MixinGuiGraphics",
+    "MixinLanguageSelectScreen"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
