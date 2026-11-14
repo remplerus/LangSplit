@@ -111,6 +111,11 @@ publishing {
     }
 }
 
+// Uploads of all versions go to the same maven-metadata.xml - run them one at a time
+tasks.withType<PublishToMavenRepository>().configureEach {
+    usesService(StonecutterTaskMutexService.create(gradle, "mavenPublish"))
+}
+
 tasks {
     processResources {
         fun MutableMap<String, String>.register(key: String, value: String) {

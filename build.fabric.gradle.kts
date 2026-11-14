@@ -1,3 +1,5 @@
+import dev.kikugie.stonecutter.controller.task.StonecutterTaskMutexService
+
 plugins {
     // Applies the correct loom variant based on the Minecraft version
     id("dev.kikugie.loom-back-compat")
@@ -127,6 +129,11 @@ publishing {
             from(components["java"])
         }
     }
+}
+
+// Uploads of all versions go to the same maven-metadata.xml - run them one at a time
+tasks.withType<PublishToMavenRepository>().configureEach {
+    usesService(StonecutterTaskMutexService.create(gradle, "mavenPublish"))
 }
 
 tasks {
